@@ -1,0 +1,11 @@
+version: '3.3'
+
+
+services:
+  portfolioweb:
+    image: httpd
+    container_name: portfolioweb
+    volumes:
+      - ./portfolio:/usr/local/apache2/htdocs/
+    ports:
+      - 60:80
