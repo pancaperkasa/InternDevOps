@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  mysqlPanca:
+    image: mysql:5.7
+    container_name: mysqlPanca
+    environment:
+      - MYSQL_ROOT_PASSWORD=${e_pass}
+      - MYSQL_DATABASE=${e_db}
+      - MYSQL_USER=${e_user}
+      - MYSQL_PASSWORD=${e_pass}
+    volumes: 
+      - ./dbpanca/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3306:3306
